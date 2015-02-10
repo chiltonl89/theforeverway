@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>TheForeverWay</title>
+
+    <!-- Bootstrap core CSS -->
+	
+    <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300|Open+Sans:300,400|Maven+Pro:400' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="cssmap-continents/cssmap-continents.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cssmapsplugin.com/4/jquery.cssmap.js"></script> 
+
+  <script type="text/javascript">
+
+
+
+  jQuery( document ).ready(function( $ ) {
+    $('#map-continents').cssMap({
+      size : 650,
+      tooltips : "sticky",
+      tooltipArrowHeight : 5,
+      cities : true,
+      visibleList : false,
+      loadingText : 'Loading ...',
+      'onClick': function(e){
+      var results;          
+      var region = e.children('a').eq(0).text();       // get region of the link; 
+      if (region == "Africa") {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+          }
+        else
+          {// code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
+            }
+          }
+        xmlhttp.open("GET","Africa.txt",true);
+        xmlhttp.send();
+      }
+      else if (region == "Asia") {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+          }
+        else
+          {// code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
+            }
+          }
+        xmlhttp.open("GET","Asia.txt",true);
+        xmlhttp.send();
+      }
+      else if (region == "North America") {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+          }
+        else
+          {// code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
+            }
+          }
+        xmlhttp.open("GET","North America.txt",true);
+        xmlhttp.send();
+      }
+      else if (region == "Australia and Southern Pacific") {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+          }
+        else
+          {// code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
+            }
+          }
+        xmlhttp.open("GET","Australia and Southern Pacific.txt",true);
+        xmlhttp.send();
+      }
+      else if (region == "Europe") {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+          }
+        else
+          {// code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
+            }
+          }
+        xmlhttp.open("GET","Europe.txt",true);
+        xmlhttp.send();
+      }
+
+      }
+
+    });
+      
+  });
+
+
+
+$(document).ready(function(){
+
+   $("#myModal").on('hidden.bs.modal', function () {
+  var xmlhttp;
+        if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+          }
+        else
+          {// code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
+            }
+          }
+        xmlhttp.open("GET","Default.txt",true);
+        xmlhttp.send();
+
+
+
+
+});
+
+});
+
+$(document).ready(function(){
+  $('.my-slick').slick();
+});
+  </script>
+
+
+      
+  
+  </head>
+<!-- NAVBAR
+================================================== -->
+
+
+  <body>
+	<div id="grn-nav" class="navbar-default navbar-fixed-top">
+		<div class="smcontainer">
+			<div class="smpholder">
+				<div class="smcontacticons">
+          <span class="fa fa-phone "></span>
+					<span class="hide-icon-span">07817034041</span>
+          <a href="mailto:steff@theforeverway.co.uk" id="emailaddress" class="smicons">
+            <span class="fa fa-envelope "></span>
+            <span class="hide-icon-span">steff@theforeverway.co.uk</span>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/TheForeverWay1" id="fbicon" class="smicons"><span class="fa fa-facebook"></span></a>
+          <a target="_blank" href="https://twitter.com/TheForeverWay1" id="twittericon" class="smicons"><span class="fa fa-twitter"></span></a>
+          <a target="_blank" href="https://plus.google.com/u/0/113544023775085172850/" id="gplusicon" class="smicons"><span class="fa fa-google-plus"></span></a>
+          <a target="_blank" href="https://www.pinterest.com/TheForeverWay/" id="pinteresticon" class="smicons"><span class="fa fa-pinterest"></span></a>
+				</div>
+			</div>
+		</div>	
+		<div id="nav-phcontainer" class="navbar navbar-default" role="navigation">
+			<div id="nav-pholder" class="container-fluid">
+				<a id="logo" class="navbar-brand" href="#"></a>									
+				<div class="navbar-header">
+					<button type="button" style="top: 15px;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>							
+					</button>
+				</div>																
+				<div class="navbar-collapse collapse">
+					<ul id="navlist" class="nav navbar-nav">
+						<li><a href="#">Home</a></li>
+						<li><a href="/contact.html">Contact</a></li>
+						<li><a href="/company.html">Company</a></li>
+						<li><a href="/opportunity.html">Opportunity</a></li>
+						<li><a href="/products.html">Products</a></li>
+						<li><a data-toggle="modal" data-target="#myModal">Shop</a></li>
+						<li><a href="/blog.html">Blog</a></li>							
+					</ul>							
+				</div>			
+			</div>
+		</div>
+	</div>	
+	
+    
+	<!-- 
+	
+	
+							<li class="dropdown">
+								<a href="#" style="top: 10px;" class="dropdown-toggle" data-toggle="dropdown"></a>
+									<ul class="dropdown-menu">
+										<li>
+											<div class="searchiconph">
+												<form class="navbar-form navbar-left" role="search">
+													<div class="form-group">
+														<input type="text" class="form-control" placeholder="Search">
+													</div>
+													<button type="submit" class="btn btn-default">Submit</button>
+												</form>
+											</div>
+										</li>
+									</ul>	
+							</li> 
+	
+	-->
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="img/slider/iphone.jpg" data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="fa fa-chevron-circle-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="fa fa-chevron-circle-right"></span></a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <img src="img/HeartIcon.png" alt="Healthy Living Lifestyle">
+          <h2>Healthy Living Lifestyle</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <img src="img/GlobeIcon.png" alt="International Travel">
+          <h2>International Travel</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <img src="img/EuroIcon.png" alt="Financial Independence">
+          <h2>Financial Independence</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    		<div class="col-lg-4 col-md-4 col-sm-6">
+              <img src="img/TupIcon.png" alt="60 Days Satisfaction Guaranteed">
+              <h2>60 Days Satisfaction Guaranteed</h2>
+              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+    		<div class="col-lg-4 col-md-4 col-sm-6">
+              <img src="img/HandshakeIcon.png" alt="Expand Staff and Clients">
+              <h2>Expand Staff & Clients</h2>
+              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+    		<div class="col-lg-4 col-md-4 col-sm-6">
+              <img src="img/GroupIcon.png" alt="Over 11.5 Million Distributors">
+              <h2>Over 11.5 Million Distributors</h2>
+              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <div id="row-fullw" class="row-fullw">
+        <div id="aloe-pholdr">
+          <img style="margin: 0 auto;" class="featurette-image img-responsive" src="img/Fotolia.jpg" alt="Fotolia Aloe Leaves" />
+        </div>
+        <div id="green-pholdr">
+          <img id="imgconnector-rgt" src="img/connector.png" alt="Generic placeholder image">
+        </div>
+        <div id="aloe-btm-grn">    
+          <div id="join-us-pholdr">
+          <div style="height:50%;margin: auto auto;width: 40%;">
+            <h2 id="join-us">Join Us</h2>
+          </div>
+          </div>    
+        </div>          
+      </div>
+
+      <!-- /END THE FEATURETTES -->
+	  
+	  
+	  <!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">The Forever Way Store</h4>
+			  </div>
+			  <div class="modal-body">
+            <div id="map-continents" class="map css-map-container m650">
+             <ul class="continents css-map">
+              <li class="c1">                
+                <a href="#africa">Africa</a>                
+              </li>
+              <li class="c2">                
+                <a href="#asia">Asia</a>
+              </li>
+              <li class="c3">
+                <a href="#australia-and-southern-pacific">Australia and Southern Pacific</a>
+              </li>
+              <li class="c4">
+                <a href="#europe">Europe</a>
+              </li>
+              <li class="c5">
+                <a href="#north-america">North America</a>
+              </li>
+              <!-- <li class="c6">
+                <a href="#south-america">South America</a>
+              </li> -->
+             </ul>
+             <span class="map-loader" style="left: 325px; margin-left: -42.5px; margin-top: -13.5px; top: 170px; display: none;">Loading ...</span>
+            </div>
+				<!-- <div class="row">
+					<div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=GBR"><img src="img/UK.png"/></a>
+					</div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=IRL"><img src="img/Ireland.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">					 						
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=ILN"><img src="img/Northern-Ireland.png"/></a>						
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=AUS"><img src="img/Australia.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=BEL"><img src="img/Belgium.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=CAN"><img src="img/Canada.png"/></a>
+					</div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=CZE"><img src="img/Czech-Rep.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">					 						
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=GRC"><img src="img/Greece.png"/></a>						
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=LUX"><img src="img/Luxembourg.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=MYS"><img src="img/Malaysia.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=MEX"><img src="img/Mexico.png"/></a>
+					</div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=NLD"><img src="img/Netherlands.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">					 						
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=NZL"><img src="img/New-Zealand.png"/></a>						
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=PHL"><img src="img/Philippines.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=PRT"><img src="img/Portugal.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=SGP"><img src="img/Singapore.png"/></a>
+					</div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=SVK"><img src="img/Slovakia.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">					 						
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=ZAF"><img src="img/South-Africa.png"/></a>						
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=ESP"><img src="img/Spain.png"/></a>
+					 </div>
+					 <div class="col-xs-4 col-md-3">
+						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=USA"><img src="img/US.png"/></a>
+					 </div>
+				</div> -->
+
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>				
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  
+	  
+
+
+      <!-- FOOTER -->
+      
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/holder.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+  </body>
+</html>

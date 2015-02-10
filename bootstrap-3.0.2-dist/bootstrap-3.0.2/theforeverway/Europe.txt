@@ -1,0 +1,13 @@
+<div class="my-slick">
+  <div id="Great Britain"></div>
+  <div id="Ireland"></div>
+  <div id="Northern Ireland"></div>
+  <div id="Belgium"></div>
+  <div id="Czech Rep"></div>
+  <div id="Greece"></div>
+  <div id="Luxembourg"></div>
+  <div id="Netherlands"></div>
+  <div id="Portugal"></div>
+  <div id="Slovakia"></div>
+  <div id="Spain"></div>
+</div>

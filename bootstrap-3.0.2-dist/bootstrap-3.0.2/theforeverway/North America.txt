@@ -1,0 +1,5 @@
+<div class="my-slick">
+  <div id="Canada"></div>
+  <div id="Mexico"></div>
+  <div id="US"></div>
+</div>

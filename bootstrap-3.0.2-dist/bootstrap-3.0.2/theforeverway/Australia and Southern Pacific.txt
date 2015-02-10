@@ -1,0 +1,4 @@
+<div class="my-slick">
+  <div id="Australia"></div>
+  <div id="New Zealand"></div>
+</div>

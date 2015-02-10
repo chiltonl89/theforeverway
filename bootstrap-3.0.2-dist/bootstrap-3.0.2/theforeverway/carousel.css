@@ -1,0 +1,809 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footerhttps://localhost/bootstrap-3.0.2-dist/bootstrap-3.0.2/theforeverway/# and lighter body text */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin-top: 113px;
+  padding-bottom: 40px;
+  color: #5a5a5a;
+  
+}
+
+/*  CUSTOMIZE THE GLYPHICON  */
+
+span.glyphicon.glyphicon-arrow-up {
+font-size: 25px;
+color: #bdc063;
+}
+
+
+/*  CUSTOMIZE THE MODALS   */
+/*
+div.modal-body a {
+height: 73px;
+width: 92px;
+margin-top: 10px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+*/
+.modal-header {
+background-color: #bdc063;
+}
+
+h4#myModalLabel {
+color: #fff;
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+button.navbar-toggle { 
+background: none transparent; border: none; 
+
+} 
+button.navbar-toggle:focus { 
+outline:0 !important;; 
+
+} 
+
+  .dropdown a {
+  background-image: url('img/searchIcon.png');
+  height: 33px;
+  width: 33px;
+  }
+  
+a.smicons {
+color: #fff;
+
+}
+
+span.fa.fa-envelope{
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+span.fa.fa-facebook{
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+span.fa.fa-google-plus{
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+span.fa.fa-phone{
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+span.fa.fa-twitter {
+vertical-align: middle;
+font-size: 19px;
+
+}
+
+span.fa.fa-pinterest {
+
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+a.smicons:hover {
+color: #FBFF83;
+
+}
+
+div#phonetel:hover  {
+background-image: url('img/PhoneTel-gld.png');
+color:#FBFF83!important;
+}
+  
+  
+div#phonetel  {
+width:108px;
+height:33px;
+background-image: url('img/PhoneTel.png');
+background-repeat: no-repeat;
+color: #FFFFFF; 
+}
+  
+div#phonetel span {
+margin-left: 30px;
+line-height: 33px;
+
+width:30px;
+height:33px;
+}
+  
+a#phonetel {
+margin-left: 30px;
+margin-top: 15px;
+line-height: 30px;
+
+width:30px;
+height:33px;
+}
+
+
+a#emailaddress {
+line-height: 30px;
+width:30px;
+height:33px;
+text-decoration: none;
+
+ 
+}
+
+div#fbicon:hover  {
+background-image: url('img/fbIcon-gld.png');
+color:#FBFF83;
+
+}
+
+div#fbicon  {
+width:26px;
+height:33px;
+background-image: url('img/fbIcon.png');
+background-repeat: no-repeat;
+}
+
+a#fbicon {
+vertical-align: middle;
+width:26px;
+height:33px;
+}
+
+div#twittericon:hover  {
+background-image: url('img/TwitterIcon-gld.png');
+color:#FBFF83;
+}
+
+div#twittericon  {
+width:41px;
+height:33px;
+background-image: url('img/TwitterIcon.png');
+background-repeat: no-repeat;
+}
+
+a#twittericon {
+
+width:41px;
+height:33px;
+}
+
+div#gplusicon:hover  {
+background-image: url('img/GplusIcon-gld.png');
+color:#FBFF83;
+}
+
+div#gplusicon  {
+width:37px;
+height:33px;
+background-image: url('img/GplusIcon.png');
+background-repeat: no-repeat;
+}
+
+a#gplusicon {
+vertical-align: middle;
+width:37px;
+height:33px;
+}
+
+div#pinteresticon:hover  {
+background-image: url('img/PinterestIcon-gld.png');
+color:#FBFF83;
+}
+
+div#pinteresticon  {
+width:36px;
+height:33px;
+background-image: url('img/PinterestIcon.png');
+background-repeat: no-repeat;
+}
+
+a#pinteresticon {
+
+width:36px;
+height:33px;
+}
+
+
+div#nav-phcontainer {
+
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+}
+
+
+
+#logo {
+background-image: url('img/the-forever-way-icon.png');
+background-repeat: no-repeat;
+background-color: #fff;
+width:219px;
+height:80px;
+margin-left: 15px;
+}
+
+#nav-pholder {
+height:80px;
+background-color: #fff;
+}
+
+.logocontainer {
+height:80px;
+display:inline;
+}
+
+.smcontainer{
+height: 33px;
+border: 0;
+border-bottom: 1px solid #9ba013;
+-webkit-box-shadow: 0 2px 2px -2px rgba(155, 160, 19, .52);
+
+}
+
+.smpholder {
+padding: 0px 3px;
+margin-left: auto; 
+margin-right: auto;
+height: 33px;
+color: #fff;
+}
+#grn-nav {	
+background-color: #bdc063;
+height:113px;	
+}
+.hide-icon-span {
+font-family: 'Maven Pro', sans-serif;
+font-size: 11px;
+font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+font-size: 12px;
+font-weight: bold;
+-webkit-font-smoothing: antialiased;
+text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 0px;
+}
+
+
+
+.smcontacticons {
+	height: 33px;
+}
+
+
+div.contacticons {
+display: inline;
+float: left;
+}
+
+ 
+.contacticons a:link {color:#FFFFFF;text-decoration: none;}
+.contacticons a:visited {color:#FFFFFF;text-decoration: none;}
+.contacticons a:hover   {color:#FBFF83;text-decoration: none;}
+.contacticons a:active  {color:#E2E576;text-decoration: none;}
+
+
+
+
+	
+	
+}
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar-wrapper .navbar {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+span.fa.fa-chevron-circle-right {
+position: absolute;
+top: 50%;
+z-index: 5;
+display: inline-block;
+right: 50%;
+font-size: 50px;
+color: #bdc063;
+}
+
+span.fa.fa-chevron-circle-left {
+
+position: absolute;
+top: 50%;
+z-index: 5;
+display: inline-block;
+left: 50%;
+font-size: 50px;
+color: #bdc063;
+
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marketing .row h2 {
+  font-weight: lighter;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  display: inline;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+ /*img */
+ .container .row img {
+position: relative;
+top: -3px;
+}
+/* Featurettes
+------------------------- */
+
+
+
+h2#join-us {
+margin-top: 10px;
+position: relative;
+top: 3px;
+}
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 480px) {
+/* Hide the grn-nav spans */
+.hide-icon-span {
+display: none;
+}
+.smpholder {
+width: 115px;
+}
+
+div#aloe-pholdr {
+width: 100%;
+height: auto;
+margin-bottom: 5px;
+
+}
+
+div#green-pholdr {
+height: 200px;
+width: 100%;
+display: block;
+position: relative;
+float: none;
+background-color: #727515
+
+}
+
+div#join-us-pholdr {
+border-style: solid;
+border-width: 7px;
+border-color: rgba(241,223,88,0.8);
+background: #fff;
+margin-left: auto;
+margin-right: auto;
+margin-top: 30px;
+width: 290px;
+height: 72px;
+}
+
+div#row-fullw {
+margin-top: 0px;
+
+}
+
+div#aloe-btm-grn {
+height: 147px;
+width: 100%;
+position: absolute;
+background-color: #a7aa4e;
+}
+
+img#imgconnector-rgt {
+width: 28px;
+position: relative;
+top: -13px;
+margin-left: auto;
+margin-right: auto;
+display: block;
+transform: rotate(90deg);
+}
+
+.navbar-icon-holder {
+width: 170px;
+top: 15px;
+right: 10px;
+display:inline;
+}
+
+div#phonetel  {
+width: 30px;
+}
+
+div#emailaddress  {
+width: 30px;
+}
+
+
+}
+
+@media (min-width: 480px) {
+
+  div#aloe-pholdr {
+width: 100%;
+height: auto;
+
+}
+
+div#green-pholdr {
+height: 200px;
+width: 100%;
+display: block;
+position: relative;
+float: none;
+background-color: #727515
+
+}
+
+div#join-us-pholdr {
+border-style: solid;
+border-width: 7px;
+border-color: rgba(241,223,88,0.8);
+background: #fff;
+margin-left: auto;
+margin-right: auto;
+margin-top: 30px;
+width: 290px;
+height: 72px;
+
+}
+
+div#row-fullw {
+margin-top: 0px;
+font-size: 0;
+
+
+}
+
+div#aloe-btm-grn {
+height: 147px;
+width: 100%;
+position: absolute;
+background-color: #a7aa4e;
+}
+
+img#imgconnector-rgt {
+width: 28px;
+position: relative;
+top: -13px;
+margin-left: auto;
+margin-right: auto;
+display: block;
+transform: rotate(90deg);
+}
+
+
+
+ul#navlist > li > a {
+font-family: 'Open Sans', sans-serif;
+font-size: 16px;
+padding-right: 12px;
+padding-left: 12px;
+padding-bottom: 7px;
+font-weight: lighter;
+}
+
+.navbar-nav > li {
+margin-left: 0px;
+}
+
+/* social media holder alignment
+*/
+.smpholder {
+width: 355px;
+}
+
+.navbar-icon-holder {
+display:inline;
+top: 15px;
+width: 250px;
+right: 10px;
+}
+
+
+.searchiconph {
+display:inline-block;
+}
+
+/*
+.navcontainer {
+display: block;
+
+}
+*/
+.navbar-icon-holder {
+
+top: 15px;
+}
+}
+
+
+@media (max-width: 768px) {
+
+ul#navlist {
+width: 120px;
+background-color: #fff;
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
+float: right;
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+}
+
+
+}
+
+
+
+@media (min-width: 768px) {
+
+ 
+
+ul#navlist > li > a {
+padding-right: 5px;
+padding-left: 7px;
+}
+
+ul#navlist {
+margin-top: 15px;
+margin-left: 15px;
+
+}
+.navbar-nav > li {
+margin-left: 0px;
+}
+
+/*
+.navbar-icon-holder {
+display: none;
+width: 430px;
+}
+*/
+
+
+  /* Remove the edge padding needed for mobile */
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-left:  15px;
+    padding-right: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-left:  0; 
+  }
+
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+
+}
+
+
+
+
+@media (min-width: 858px) {
+
+.navbar-nav > li {
+margin-left: 10px;
+}
+
+}
+
+@media (max-width: 992px) {
+
+
+
+}
+
+
+@media (min-width: 992px) {
+
+
+
+ul#navlist > li > a {
+font-family: 'Open Sans', sans-serif;
+font-size: 20px;
+padding-right: 15px;
+padding-left: 15px;
+font-weight: lighter;
+}
+
+
+
+.navcontainer {
+display: inline;
+height:80px;
+position: relative;
+
+}
+
+.navbar-nav > li {
+margin-left: 0px;
+}
+
+  .featurette-heading {
+    margin-top: 120px;
+  }
+  
+
+  
+}
+
+@media (max-width: 1045px) {
+
+
+}
+
+@media (max-width: 1115px) {
+
+}
+
+@media (min-width: 1115px) {
+
+.navbar-nav > li {
+margin-left: 20px;
+}
+
+ img#imgconnector-rgt {
+position: relative;
+top: 105px;
+left: 0px; 
+margin-left: 0px;
+margin-right: 0px;
+transform:none;
+}
+
+div#row-fullw {
+margin-top: 45px;
+
+
+}
+
+div.row-fullw {
+width: 100%;
+display: inline-block;
+position: absolute;
+left: 0px;
+font-size: 0;
+}
+
+div#aloe-btm-grn {
+
+background-color: #a7aa4e;
+height: 247px;
+width:50%;
+position: absolute;
+}
+
+div#aloe-pholdr {
+width: 50%;
+display: inline-block;
+height: 253px;
+}
+
+div#green-pholdr {
+height: 500px;
+width: 50%;
+float: right;
+display: inline;
+background-color: #727515;
+position: relative;
+}
+
+
+div#join-us-pholdr {
+border-style: solid;
+border-width: 7px;
+border-color: rgba(241,223,88,0.8);
+background: #fff;
+top: 85px;
+left: 487px;
+position: absolute;
+width: 290px;
+height: 72px;
+}
+
+
+}
+

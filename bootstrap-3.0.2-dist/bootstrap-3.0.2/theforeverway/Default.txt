@@ -1,0 +1,18 @@
+<ul class="continents css-map">
+<li class="c1">                
+<a href="#africa">Africa</a>                
+</li>
+<li class="c2">                
+<a href="#asia">Asia</a>
+</li>
+<li class="c3">
+<a href="#australia-and-southern-pacific">Australia and Southern Pacific</a>
+</li>
+<li class="c4">
+<a href="#europe">Europe</a>
+</li>
+<li class="c5">
+<a href="#north-america">North America</a>
+</li>
+</ul>
+<span class="map-loader" style="left: 325px; margin-left: -42.5px; margin-top: -13.5px; top: 170px; display: none;">Loading ...</span>
