@@ -3,23 +3,8 @@
 /* Padding below the footerhttps://localhost/bootstrap-3.0.2-dist/bootstrap-3.0.2/theforeverway/# and lighter body text */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 body {
   margin-top: 113px;
-  padding-bottom: 40px;
   color: #5a5a5a;
   
 }
@@ -51,9 +36,30 @@ h4#myModalLabel {
 color: #fff;
 }
 
+div.my-slick img {
+  display: block;
+  margin: auto auto;
+}
+
+
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
+
+body.modal-open header {
+  overflow: hidden;
+}
+
+header.cd-header h1 {
+  margin: auto auto;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color:#9ba013;
+}
+
+
 button.navbar-toggle { 
 background: none transparent; border: none; 
 
@@ -329,9 +335,13 @@ float: left;
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
+.carousel-indicators .active {
+  background-color: #9ba013;
+}
+
 /* Carousel base class */
 .carousel {
-  height: 500px;
+/*  height: 600px; */
   margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -341,16 +351,16 @@ float: left;
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 500px;
+/*  height: 600px; */
   background-color: #777;
 }
-.carousel-inner > .item > img {
+/* .carousel-inner > .item > img {
   position: absolute;
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 500px;
-}
+  height: 600px;
+} */
 
 span.fa.fa-chevron-circle-right {
 position: absolute;
@@ -400,7 +410,7 @@ color: #bdc063;
 }
 
  /*img */
- .container .row img {
+ .marketing .row img {
 position: relative;
 top: -3px;
 }
@@ -422,6 +432,147 @@ top: 3px;
 }
 
 
+/* Stamps
+------------------------- */
+
+div#foreverstamps img {
+  display: block;
+  margin: auto auto;
+
+}
+
+
+
+
+/* svg
+------------------------- */
+
+#bigTriangleShadow {
+  display: block;
+}
+
+#trianglePath2 {
+fill: #727515;
+stroke: #727515;
+}
+
+#trianglePath1 {
+fill: #a7aa4e;
+stroke: #a7aa4e;
+}
+
+
+/* social media contactpg
+------------------------- */
+.invis {
+visibility: hidden;
+  }
+
+
+/* Footer
+------------------------- */
+#footer {
+border-top-color: #9ba013;
+border-top-style: solid;
+border-top-width: 1px;
+background-color: #9f9e77;
+padding: 15px 0px;
+font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+font-size: 12px;
+font-weight: bold;
+-webkit-font-smoothing: antialiased;
+color: #fff;
+
+}
+
+
+
+p.copyright.no-margin-bottom {
+
+margin: auto;
+font-family: 'Roboto', Arial;
+font-weight: 300;
+
+}
+
+#footer p a:link {
+color:#FBFF83;text-decoration: none;
+}
+
+#footer p a:hover {
+color:#ffffff;text-decoration: none;
+}
+
+#footer p a:active {
+color:#727515;text-decoration: none;
+}
+
+#footer p a:visited {
+color:#FBFF83;text-decoration: none;
+}
+
+div#footerlogoholder {
+margin-top: 60px;
+margin-bottom: 15px;
+overflow: hidden;
+width: 60px;
+height: 60px;
+position: relative;
+left: 50%;
+margin-left:-30px;
+display: table;
+}
+
+div#footerlogocircle {
+width: 60px;
+
+height: 60px;
+margin: auto;
+text-align: center;
+display: table-cell;
+vertical-align: middle;
+}
+
+span.fa.fa-arrow-up {
+
+  font-size: 36px;
+}
+
+div#footerlogocircle a {
+  margin: auto;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+     
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  
+  overflow: hidden;
+}
+
+div#footerlogocircle a:link {
+color:#FBFF83;text-decoration: none;
+background-image: url("img/footer-icon-circle.png");
+}
+
+div#footerlogocircle a:hover {
+color:#fff;text-decoration: none;
+background-image: url("img/footer-icon-circle-inverse.png");
+
+-webkit-transform:rotate(360deg);
+-moz-transform:rotate(360deg);
+-o-transform:rotate(360deg);
+
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -457,9 +608,11 @@ border-style: solid;
 border-width: 7px;
 border-color: rgba(241,223,88,0.8);
 background: #fff;
-margin-left: auto;
-margin-right: auto;
-margin-top: 30px;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-left: -145px;
+margin-top: -36px;
 width: 290px;
 height: 72px;
 }
@@ -472,7 +625,7 @@ margin-top: 0px;
 div#aloe-btm-grn {
 height: 147px;
 width: 100%;
-position: absolute;
+position: relative;
 background-color: #a7aa4e;
 }
 
@@ -501,6 +654,11 @@ div#emailaddress  {
 width: 30px;
 }
 
+div#stampcontainer div#foreverstamps img {
+  width:90%;
+}
+
+
 
 }
 
@@ -527,9 +685,11 @@ border-style: solid;
 border-width: 7px;
 border-color: rgba(241,223,88,0.8);
 background: #fff;
-margin-left: auto;
-margin-right: auto;
-margin-top: 30px;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-left: -145px;
+margin-top: -36px;
 width: 290px;
 height: 72px;
 
@@ -545,7 +705,7 @@ font-size: 0;
 div#aloe-btm-grn {
 height: 147px;
 width: 100%;
-position: absolute;
+position: relative;
 background-color: #a7aa4e;
 }
 
@@ -562,16 +722,12 @@ transform: rotate(90deg);
 
 
 ul#navlist > li > a {
-font-family: 'Open Sans', sans-serif;
-font-size: 16px;
-padding-right: 12px;
-padding-left: 12px;
 padding-bottom: 7px;
-font-weight: lighter;
+
 }
 
 .navbar-nav > li {
-margin-left: 0px;
+margin: auto auto;
 }
 
 /* social media holder alignment
@@ -605,16 +761,14 @@ top: 15px;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
 
 ul#navlist {
-width: 120px;
-background-color: #fff;
-border-bottom-left-radius: 2px;
-border-bottom-right-radius: 2px;
-float: right;
+width: 100%;
+background-color: rgba(255, 255, 255, 0.70);
 box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 }
+
 
 
 }
@@ -623,22 +777,24 @@ box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 
 @media (min-width: 768px) {
 
- 
+#foreverstamps {
+
+  margin-left: -35px;
+  margin-right: -35px;
+  margin-top: 15px;
+}
+/*
 
 ul#navlist > li > a {
 padding-right: 5px;
 padding-left: 7px;
 }
 
-ul#navlist {
-margin-top: 15px;
-margin-left: 15px;
 
-}
-.navbar-nav > li {
+ .navbar-nav > li {
 margin-left: 0px;
 }
-
+/*
 /*
 .navbar-icon-holder {
 display: none;
@@ -690,15 +846,68 @@ margin-left: 10px;
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
 
+ul#navlist > li > a {
 
+display: block;
+width: 160px;
+margin: 0px auto;
+text-align: center;
+
+}
 
 }
 
 
 @media (min-width: 992px) {
 
+div#tabpanel {
+  margin-top: 60px;
+}
+
+iframe#twitter-widget-0 {
+  display: block!important;
+  margin: 20px auto!important;
+  width: 520px!important; 
+}
+
+div#___ytsubscribe_0 {
+  display: block!important;
+  margin: 20px auto!important;
+  width: 171px!important; 
+}
+
+div#pinterest > :first-child  {
+ width: 346px!important; 
+ display: block!important;
+ margin: 20px auto!important; 
+
+}
+
+span.IN-widget {
+  width: 365px!important;
+  display: block!important;
+  margin: 20px auto!important;
+}
+
+
+div#___person_0 {
+  display: block!important;
+  margin: 20px auto!important;
+}
+
+div.fb_iframe_widget {
+  display: block;
+}
+
+
+div.fb_iframe_widget span {
+margin-right: auto;
+margin-left: auto;
+margin-top: 20px;
+display: block;
+}
 
 
 ul#navlist > li > a {
@@ -709,6 +918,15 @@ padding-left: 15px;
 font-weight: lighter;
 }
 
+ul#navlist {
+
+width: 710px;
+margin-top: 15px;
+margin-left: 240px;
+float: none;
+margin-right: auto;
+
+}
 
 
 .navcontainer {
@@ -741,8 +959,10 @@ margin-left: 0px;
 
 @media (min-width: 1115px) {
 
+
 .navbar-nav > li {
-margin-left: 20px;
+margin-left: auto;
+margin-right: auto;
 }
 
  img#imgconnector-rgt {
@@ -763,7 +983,7 @@ margin-top: 45px;
 div.row-fullw {
 width: 100%;
 display: inline-block;
-position: absolute;
+position: relative;
 left: 0px;
 font-size: 0;
 }
@@ -773,7 +993,7 @@ div#aloe-btm-grn {
 background-color: #a7aa4e;
 height: 247px;
 width:50%;
-position: absolute;
+position: relative;
 }
 
 div#aloe-pholdr {
@@ -783,6 +1003,7 @@ height: 253px;
 }
 
 div#green-pholdr {
+border-top-left-radius: 15px;
 height: 500px;
 width: 50%;
 float: right;
@@ -797,9 +1018,11 @@ border-style: solid;
 border-width: 7px;
 border-color: rgba(241,223,88,0.8);
 background: #fff;
-top: 85px;
-left: 487px;
 position: absolute;
+top: 50%;
+left: 50%;
+margin-left: -145px;
+margin-top: -36px;
 width: 290px;
 height: 72px;
 }
@@ -807,3 +1030,12 @@ height: 72px;
 
 }
 
+@media (min-width: 1175px) {
+
+ul#navlist {
+
+margin-left: auto;
+
+}
+
+}

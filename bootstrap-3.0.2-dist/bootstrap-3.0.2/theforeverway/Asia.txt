@@ -1,5 +1,5 @@
 <div class="my-slick">
-  <div id="Malaysia"></div>
-  <div id="Philippines"></div>
-  <div id="Singapore"></div>
+  <div id="malaysia"><a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=MYS"><img src="img/map-icons/maps-malaysia.png" /></a></div>
+  <div id="philippines"><a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=PHL"><img src="img/map-icons/maps-philippines.png" /></a></div>
+  <div id="singapore"><a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=SGP"><img src="img/map-icons/maps-singapore.png" /></a></div>
 </div>

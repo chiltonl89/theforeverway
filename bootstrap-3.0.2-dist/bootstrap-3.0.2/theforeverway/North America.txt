@@ -1,5 +1,5 @@
 <div class="my-slick">
-  <div id="Canada"></div>
-  <div id="Mexico"></div>
-  <div id="US"></div>
+  <div id="canada"><a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=CAN"><img src="img/map-icons/maps-canada.png" /></a></div>
+  <div id="mexico"><a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=MEX"><img src="img/map-icons/maps-mexico.png" /></a></div>
+  <div id="us"><a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=USA"><img src="img/map-icons/maps-united-states.png" /></a></div>
 </div>

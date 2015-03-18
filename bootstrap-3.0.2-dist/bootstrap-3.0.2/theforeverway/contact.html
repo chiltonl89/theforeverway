@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>TheForeverWay - Contact Us</title>
+
+    <!-- Bootstrap core CSS -->
+	
+    <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="parallax.css">
+    <link href="carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="contact_form.css" />    
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300|Open+Sans:300,400|Maven+Pro:400' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="cssmap-continents/cssmap-continents.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cssmapsplugin.com/4/jquery.cssmap.js"></script> 
+    <script src="contact_form.js"></script>
+    <script type="text/javascript">
+          //<![CDATA[ 
+      $(window).load(function(){
+      //Default Action  
+          $(".tab-pane").hide(); //Hide all content
+          $("ul.nav-tabs li:first").addClass("active").show(); //Activate first tab
+          $(".tab-pane:first").show(); //Show first tab content
+
+          //On Click Event
+          $("ul.nav-tabs li").click(function() {
+              $(".tab-pane").removeClass("invis"); //Remove any "invis" class
+              $("ul.nav-tabs li").removeClass("active"); //Remove any "active" class
+              $(this).addClass("active"); //Add "active" class to selected tab
+              $(".tab-pane").hide(); //Hide all tab content
+              var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+              $(activeTab).fadeIn(); //Fade in the active content
+              return false;
+          });
+      });//]]> 
+    </script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+
+          $("#mapButton").on("click", function () {
+            $('#map-continents').cssMap({
+              size : 650,
+              tooltips : "sticky",
+              cities : true,
+              'onClick': function(e){
+                var region = e.children('a').eq(0).text(); // get url of the region;
+                    fileName = region+".txt";                    
+                $.ajax({
+                url: fileName, 
+                success: function(result){
+                  $("#map-continents").html(result);
+                },
+                });
+              }
+            });
+          });
+        });
+
+
+
+      $(document).ready(function(){
+
+         $("#myModal").on('hidden.bs.modal', function () {
+            var xmlhttp;
+              if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+                }
+              else
+                {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                  {
+                  document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
+                  }
+                }
+              xmlhttp.open("GET","Default.txt",true);
+              xmlhttp.send();
+          });
+      });
+
+        $(document).ajaxComplete(function(){
+            $('.my-slick').slick({
+              dots: true,
+              accessibility: true,
+              arrows: true,
+              draggable: true,
+              
+            });         
+        });
+
+
+      
+    </script>
+  </head>
+<!-- NAVBAR
+================================================== -->
+
+
+  <body>
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+	<div id="grn-nav" class="navbar-default navbar-fixed-top">
+		<div class="smcontainer">
+			<div class="smpholder">
+				<div class="smcontacticons">
+          <span class="fa fa-phone "></span>
+					<span class="hide-icon-span">07817034041</span>
+          <a href="mailto:steff@theforeverway.co.uk" id="emailaddress" class="smicons">
+            <span class="fa fa-envelope "></span>
+            <span class="hide-icon-span">steff@theforeverway.co.uk</span>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/TheForeverWay1" id="fbicon" class="smicons"><span class="fa fa-facebook"></span></a>
+          <a target="_blank" href="https://twitter.com/TheForeverWay1" id="twittericon" class="smicons"><span class="fa fa-twitter"></span></a>
+          <a target="_blank" href="https://plus.google.com/u/0/113544023775085172850/" id="gplusicon" class="smicons"><span class="fa fa-google-plus"></span></a>
+          <a target="_blank" href="https://www.pinterest.com/TheForeverWay/" id="pinteresticon" class="smicons"><span class="fa fa-pinterest"></span></a>
+				</div>
+			</div>
+		</div>	
+		<div id="nav-phcontainer" class="navbar navbar-default" role="navigation">
+			<div id="nav-pholder" class="container-fluid">
+				<a id="logo" class="navbar-brand" href="#"></a>									
+				<div class="navbar-header">
+					<button type="button" style="top: 15px;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>							
+					</button>
+				</div>																
+				<div class="navbar-collapse collapse">
+					<ul id="navlist" class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="company.html">Company</a></li>
+						<li><a href="opportunity.html">Opportunity</a></li>
+						<li><a href="products.html">Products</a></li>
+						<li><a id="mapButton" data-toggle="modal" data-target="#myModal" style="cursor:pointer;">Shop</a></li>
+						<li><a target="_blank" href="http://www.discoverforever.com/blog/">Blog</a></li>							
+					</ul>							
+				</div>			
+			</div>
+		</div>
+	</div>	
+	
+  <div class="cd-main-content">
+    <div class="cd-fixed-bg cd-bg-1">
+      <h1>Alternate Fixed &amp; Scroll Backgrounds</h1>
+    </div> <!-- cd-fixed-bg -->
+
+    <div class="cd-scrolling-bg">
+      <div class="container">
+        <h1>Contact</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia, repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem. Voluptates quibusdam odit odio incidunt consequatur, consectetur aspernatur optio vitae molestias, quas repellendus fugit ullam culpa, eligendi et dignissimos voluptatibus illum? Molestias aliquam nostrum quasi ipsa culpa, iusto explicabo ut error, consequuntur enim temporibus, adipisci tempora voluptate, id consequatur mollitia eveniet blanditiis. Illo quod repellendus alias? Cum rem doloremque adipisci accusantium? Saepe, necessitatibus!
+        </p>
+        <div id="tabpanel" role="tabpanel">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#facebook" aria-controls="facebook" role="tab" data-toggle="tab"><img src="img/social-media/facebook.png" /></a></li>
+            <li role="presentation"><a href="#googleplus" aria-controls="googleplus" role="tab" data-toggle="tab"><img src="img/social-media/googleplus.png" /></a></li>
+            <li role="presentation"><a href="#linkedin" aria-controls="linkedin" role="tab" data-toggle="tab"><img src="img/social-media/linkedin.png" /></a></li>
+            <li role="presentation"><a href="#pinterest" aria-controls="pinterest" role="tab" data-toggle="tab"><img src="img/social-media/pinterest.png" /></a></li>
+            <li role="presentation"><a href="#twitter" aria-controls="twitter" role="tab" data-toggle="tab"><img src="img/social-media/twitter.png" /></a></li>
+            <li role="presentation"><a href="#youtube" aria-controls="youtube" role="tab" data-toggle="tab"><img src="img/social-media/youtube.png" /></a></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="facebook">
+              <div class="fb-like-box" data-href="https://www.facebook.com/TheForeverWay1" data-width="700" data-height="350" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="true" data-show-border="true"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="googleplus"><div class="g-person" data-width="450" data-href="https://plus.google.com/113544023775085172850" data-rel="author"></div></div>
+            <div role="tabpanel" class="tab-pane active invis" id="pinterest"><a data-pin-do="embedUser" href="http://gb.pinterest.com/TheForeverWay/" data-pin-scale-width="80" data-pin-scale-height="320" data-pin-board-width="400">Visit Steff Gomerson's profile on Pinterest.</a></div>
+            <div role="tabpanel" class="tab-pane" id="linkedin"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+<script type="IN/MemberProfile" data-id="http://uk.linkedin.com/pub/steff-gomerson/98/1a9/b37" data-format="inline"></script></div>            
+            <div role="tabpanel" class="tab-pane" id="twitter"><a class="twitter-timeline" href="https://twitter.com/TheForeverWay1" data-widget-id="571812476564819968">Tweets by @TheForeverWay1</a></div>
+            <div role="tabpanel" class="tab-pane" id="youtube"><div class="g-ytsubscribe" data-channel="FLPUKltd" data-layout="full" data-count="default"></div></div>
+          </div>
+        </div>
+      </div> <!-- cd-container -->
+      <div class="container" style="margin-top: 60px;">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4" style="height: 255px; display: table; overflow: hidden;">
+            <p style="display: table-cell; vertical-align: middle; font-size: 15px;">
+              The Forever Way<br />
+              14 Rudgate Park<br />
+              Thorp Arch<br />
+              Wetherby<br />
+              West Yorkshire<br />
+              LS23 7EJ<br />
+              t.<strong> 01937 339175</strong><br />
+              e.<a href="mailto:steff@theforeverway.co.uk"><strong> steff@theforeverway.co.uk</strong></a>
+            </p>
+          </div>
+          <div class="col-xs-12 col-sm-8">
+            <form id="form">
+              <p id="returnmessage"></p>
+              <input type="text" id="name" placeholder="Name &#42;"/><br/>
+              <input type="text" id="email" placeholder="Email &#42;"/><br/>
+              <input type="text" id="contact" placeholder="Contact no. (11 digits) &#42;"/><br/>  
+              <textarea id="message" placeholder="Message....."></textarea><br/>
+              <input type="button" id="submit" value="Send Message"/>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->  
+      <div id="footerlogoholder">
+        <div id="footerlogocircle">
+          <a href="#"><span class="fa fa-arrow-up"></span></a>
+        </div>
+      </div>
+      <footer id="footer" class="footer-type">
+        <div class="container text-center">
+          <p class="copyright no-margin-bottom">© 2015 The Forever Way. All rights reserved. Designed &amp; Created by <a target="_blank" href="http://www.lchilton.com">LChilton</a> of <a target="_blank" href="http://www.webstager.com">Web Stager</a></p>
+        </div>
+      </footer>
+    
+    <!-- End of Footer -->
+    </div> <!-- cd-scrolling-bg -->
+  </div>
+
+    
+	  
+	  
+	  <!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">The Forever Way Store</h4>
+			  </div>
+			  <div class="modal-body">
+            <div id="map-continents" class="map css-map-container m650">
+             <ul class="continents css-map">
+              <li class="c1">                
+                <a href="#africa">Africa</a>                
+              </li>
+              <li class="c2">                
+                <a href="#asia">Asia</a>
+              </li>
+              <li class="c3">
+                <a href="#australia-and-southern-pacific">Australia and Southern Pacific</a>
+              </li>
+              <li class="c4">
+                <a href="#europe">Europe</a>
+              </li>
+              <li class="c5">
+                <a href="#north-america">North America</a>
+              </li>
+              <!-- <li class="c6">
+                <a href="#south-america">South America</a>
+              </li> -->
+             </ul>
+             <span class="map-loader" style="left: 325px; margin-left: -42.5px; margin-top: -13.5px; top: 170px; display: none;">Loading ...</span>
+            </div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>				
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  
+	  
+
+
+      <!-- FOOTER -->
+      
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/holder.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>TheForeverWay</title>
+    <title>TheForeverWay - Forever Living Distributors</title>
 
     <!-- Bootstrap core CSS -->
 	
@@ -23,180 +23,80 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
+    <link href="hexagons.css" rel="stylesheet">
     <link href="carousel.css" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300|Open+Sans:300,400|Maven+Pro:400' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" type="text/css" href="cssmap-continents/cssmap-continents.css">
-  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-
+    
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300|Open+Sans:300,400|Maven+Pro:400' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="cssmap-continents/cssmap-continents.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://cssmapsplugin.com/4/jquery.cssmap.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cssmapsplugin.com/4/jquery.cssmap.js"></script> 
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
 
-  <script type="text/javascript">
-
-
-
-  jQuery( document ).ready(function( $ ) {
-    $('#map-continents').cssMap({
-      size : 650,
-      tooltips : "sticky",
-      tooltipArrowHeight : 5,
-      cities : true,
-      visibleList : false,
-      loadingText : 'Loading ...',
-      'onClick': function(e){
-      var results;          
-      var region = e.children('a').eq(0).text();       // get region of the link; 
-      if (region == "Africa") {
-        var xmlhttp;
-        if (window.XMLHttpRequest)
-          {// code for IE7+, Firefox, Chrome, Opera, Safari
-          xmlhttp=new XMLHttpRequest();
-          }
-        else
-          {// code for IE6, IE5
-          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-          }
-          xmlhttp.onreadystatechange=function()
-          {
-          if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
-            }
-          }
-        xmlhttp.open("GET","Africa.txt",true);
-        xmlhttp.send();
-      }
-      else if (region == "Asia") {
-        var xmlhttp;
-        if (window.XMLHttpRequest)
-          {// code for IE7+, Firefox, Chrome, Opera, Safari
-          xmlhttp=new XMLHttpRequest();
-          }
-        else
-          {// code for IE6, IE5
-          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-          }
-          xmlhttp.onreadystatechange=function()
-          {
-          if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
-            }
-          }
-        xmlhttp.open("GET","Asia.txt",true);
-        xmlhttp.send();
-      }
-      else if (region == "North America") {
-        var xmlhttp;
-        if (window.XMLHttpRequest)
-          {// code for IE7+, Firefox, Chrome, Opera, Safari
-          xmlhttp=new XMLHttpRequest();
-          }
-        else
-          {// code for IE6, IE5
-          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-          }
-          xmlhttp.onreadystatechange=function()
-          {
-          if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
-            }
-          }
-        xmlhttp.open("GET","North America.txt",true);
-        xmlhttp.send();
-      }
-      else if (region == "Australia and Southern Pacific") {
-        var xmlhttp;
-        if (window.XMLHttpRequest)
-          {// code for IE7+, Firefox, Chrome, Opera, Safari
-          xmlhttp=new XMLHttpRequest();
-          }
-        else
-          {// code for IE6, IE5
-          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-          }
-          xmlhttp.onreadystatechange=function()
-          {
-          if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
-            }
-          }
-        xmlhttp.open("GET","Australia and Southern Pacific.txt",true);
-        xmlhttp.send();
-      }
-      else if (region == "Europe") {
-        var xmlhttp;
-        if (window.XMLHttpRequest)
-          {// code for IE7+, Firefox, Chrome, Opera, Safari
-          xmlhttp=new XMLHttpRequest();
-          }
-        else
-          {// code for IE6, IE5
-          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-          }
-          xmlhttp.onreadystatechange=function()
-          {
-          if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
-            }
-          }
-        xmlhttp.open("GET","Europe.txt",true);
-        xmlhttp.send();
-      }
-
-      }
-
-    });
-      
-  });
+          $("#mapButton").on("click", function () {
+            $('#map-continents').cssMap({
+              size : 650,
+              tooltips : "sticky",
+              cities : true,
+              'onClick': function(e){
+                var region = e.children('a').eq(0).text(); // get url of the region;
+                    fileName = region+".txt";                    
+                $.ajax({
+                url: fileName, 
+                success: function(result){
+                  $("#map-continents").html(result);
+                },
+                });
+              }
+            });
+          });
+        });
 
 
 
-$(document).ready(function(){
+      $(document).ready(function(){
 
-   $("#myModal").on('hidden.bs.modal', function () {
-  var xmlhttp;
-        if (window.XMLHttpRequest)
-          {// code for IE7+, Firefox, Chrome, Opera, Safari
-          xmlhttp=new XMLHttpRequest();
-          }
-        else
-          {// code for IE6, IE5
-          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-          }
-          xmlhttp.onreadystatechange=function()
-          {
-          if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-            document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
-            }
-          }
-        xmlhttp.open("GET","Default.txt",true);
-        xmlhttp.send();
+         $("#myModal").on('hidden.bs.modal', function () {
+            var xmlhttp;
+              if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+                }
+              else
+                {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                  {
+                  document.getElementById("map-continents").innerHTML=xmlhttp.responseText;
+                  }
+                }
+              xmlhttp.open("GET","Default.txt",true);
+              xmlhttp.send();
+          });
+      });
 
-
-
-
-});
-
-});
-
-$(document).ready(function(){
-  $('.my-slick').slick();
-});
-  </script>
+        $(document).ajaxComplete(function(){
+            $('.my-slick').slick({
+              dots: true,
+              accessibility: true,
+              arrows: true,
+              draggable: true,
+              
+            });         
+        });
 
 
       
-  
+    </script>
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -234,12 +134,12 @@ $(document).ready(function(){
 				<div class="navbar-collapse collapse">
 					<ul id="navlist" class="nav navbar-nav">
 						<li><a href="#">Home</a></li>
-						<li><a href="/contact.html">Contact</a></li>
-						<li><a href="/company.html">Company</a></li>
-						<li><a href="/opportunity.html">Opportunity</a></li>
-						<li><a href="/products.html">Products</a></li>
-						<li><a data-toggle="modal" data-target="#myModal">Shop</a></li>
-						<li><a href="/blog.html">Blog</a></li>							
+						<li><a href="contact.html">Contact</a></li>
+						<li><a href="company.html">Company</a></li>
+						<li><a href="opportunity.html">Opportunity</a></li>
+						<li><a href="products.html">Products</a></li>
+						<li><a id="mapButton" data-toggle="modal" data-target="#myModal" style="cursor:pointer;">Shop</a></li>
+						<li><a href="http://www.discoverforever.com/blog/">Blog</a></li>							
 					</ul>							
 				</div>			
 			</div>
@@ -247,26 +147,7 @@ $(document).ready(function(){
 	</div>	
 	
     
-	<!-- 
-	
-	
-							<li class="dropdown">
-								<a href="#" style="top: 10px;" class="dropdown-toggle" data-toggle="dropdown"></a>
-									<ul class="dropdown-menu">
-										<li>
-											<div class="searchiconph">
-												<form class="navbar-form navbar-left" role="search">
-													<div class="form-group">
-														<input type="text" class="form-control" placeholder="Search">
-													</div>
-													<button type="submit" class="btn btn-default">Submit</button>
-												</form>
-											</div>
-										</li>
-									</ul>	
-							</li> 
-	
-	-->
+
 
     <!-- Carousel
     ================================================== -->
@@ -279,33 +160,18 @@ $(document).ready(function(){
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="img/slider/iphone.jpg" data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+          <img class="img-responsive" data-src="img/banners/cancun-retreat-2015.png" src="img/banners/cancun-retreat-2015.png" alt="cancun-retreat-2015">
           <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
           </div>
         </div>
         <div class="item">
-          <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
+          <img class="img-responsive" data-src="img/banners/singapore-rally-2015.png" src="img/banners/singapore-rally-2015.png" alt="singapore-rally-2015">
           <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
           </div>
         </div>
         <div class="item">
-          <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
+          <img class="img-responsive" data-src="img/banners/flp-360.png" src="img/banners/flp-360.png" alt="flp-360">
           <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
           </div>
         </div>
       </div>
@@ -372,18 +238,135 @@ $(document).ready(function(){
         <div id="green-pholdr">
           <img id="imgconnector-rgt" src="img/connector.png" alt="Generic placeholder image">
         </div>
-        <div id="aloe-btm-grn">    
-          <div id="join-us-pholdr">
-          <div style="height:50%;margin: auto auto;width: 40%;">
-            <h2 id="join-us">Join Us</h2>
-          </div>
-          </div>    
+        <div id="aloe-btm-grn">     
         </div>          
       </div>
 
+    <svg id="bigTriangleShadow" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path id="trianglePath1" d="M0 0 L50 100 L100 0 Z"></path>
+      <path id="trianglePath2" d="M50 100 L100 40 L100 0 Z"></path>
+    </svg>
+
+      <div id="stampcontainer" class="container">
+          <div id="foreverstamps" class="row">              
+              <div class="col-xs-6 col-md-4 col-lg-2"><img src="img/aloe-certified.png" /></div>
+              <div class="col-xs-6 col-md-4 col-lg-2"><img src="img/cruelty-free.png" /></div>
+              <div class="col-xs-6 col-md-4 col-lg-2"><img src="img/dsa.png" /></div>
+              <div class="col-xs-6 col-md-4 col-lg-2"><img src="img/60day-satisfaction.png" /></div>
+              <div class="col-xs-6 col-md-4 col-lg-2"><img src="img/halal.png" /></div>
+              <div class="col-xs-6 col-md-4 col-lg-2"><img src="img/islamic-society.png" /></div>
+          </div>
+      </div>
+
+      <div style="margin-top:20px;" id="hexcontainer" class="container">
+      <article>
+        <div class="lab_item">    
+        <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(img/hex-images/fit-toning-strength.png);">                
+                </div>
+             </div>
+         </div>
+         </div>
+          <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(img/hex-images/keep-calm-aloe.png);">                
+                </div>
+             </div>
+         </div>
+         </div>
+          <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(img/hex-images/cancun-2015-retreat.png);">                
+                </div>
+            </div>
+          </div>
+         </div>
+ <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(img/hex-images/eagle.png);">                
+                </div>
+             </div>
+         </div>
+         </div>
+              <div class="lab_item">        
+        <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(img/hex-images/singapore-rally.png);">                
+                </div>
+             </div>
+         </div>
+         </div>
+          <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(img/hex-images/aloe-vera-gel.png);">                
+                </div>
+             </div>
+         </div>
+         </div>
+          <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(img/hex-images/beauty-range.png);">                
+                </div>
+             </div>
+         </div>
+         </div>
+          <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(img/hex-images/aloe-plant.png);">                
+                </div>
+             </div>
+         </div>
+         </div>
+          <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(img/hex-images/worldwide-org.png);">                
+                </div>
+             </div>
+         </div>
+         </div>
+          <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(img/hex-images/independent-business.png);">                
+                </div>
+             </div>
+         </div>
+         </div>
+          <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(http://placekitten.com/230/300);">                
+                </div>
+             </div>
+         </div>
+         </div>     
+  </article>
+</div>
       <!-- /END THE FEATURETTES -->
 	  
-	  
+	  <!-- Footer -->  
+    <div id="footerlogoholder">
+      <div id="footerlogocircle">
+          <a href="#"><span class="fa fa-arrow-up"></span></a>
+      </div>
+    </div>
+    <footer id="footer" class="footer-type">
+        <div class="container text-center">
+          <p class="copyright no-margin-bottom">© 2015 The Forever Way. All rights reserved. Designed &amp; Created by <a target="_blank" href="http://www.lchilton.com">LChilton</a> of <a target="_blank" href="http://www.webstager.com">Web Stager</a></p>
+        </div>
+    </footer>
+    
+    <!-- End of Footer -->
+
+
 	  <!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
@@ -416,69 +399,6 @@ $(document).ready(function(){
              </ul>
              <span class="map-loader" style="left: 325px; margin-left: -42.5px; margin-top: -13.5px; top: 170px; display: none;">Loading ...</span>
             </div>
-				<!-- <div class="row">
-					<div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=GBR"><img src="img/UK.png"/></a>
-					</div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=IRL"><img src="img/Ireland.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">					 						
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=ILN"><img src="img/Northern-Ireland.png"/></a>						
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=AUS"><img src="img/Australia.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=BEL"><img src="img/Belgium.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=CAN"><img src="img/Canada.png"/></a>
-					</div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=CZE"><img src="img/Czech-Rep.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">					 						
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=GRC"><img src="img/Greece.png"/></a>						
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=LUX"><img src="img/Luxembourg.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=MYS"><img src="img/Malaysia.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=MEX"><img src="img/Mexico.png"/></a>
-					</div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=NLD"><img src="img/Netherlands.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">					 						
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=NZL"><img src="img/New-Zealand.png"/></a>						
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=PHL"><img src="img/Philippines.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=PRT"><img src="img/Portugal.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=SGP"><img src="img/Singapore.png"/></a>
-					</div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=SVK"><img src="img/Slovakia.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">					 						
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=ZAF"><img src="img/South-Africa.png"/></a>						
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=ESP"><img src="img/Spain.png"/></a>
-					 </div>
-					 <div class="col-xs-4 col-md-3">
-						<a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=USA"><img src="img/US.png"/></a>
-					 </div>
-				</div> -->
-
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>				
@@ -487,19 +407,10 @@ $(document).ready(function(){
 		  </div>
 		</div>
 	  
-	  
-
-
-      <!-- FOOTER -->
-      
-
-
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <script src="../../dist/js/holder.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

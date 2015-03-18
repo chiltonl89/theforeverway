@@ -1,4 +1,4 @@
 <div class="my-slick">
-  <div id="Australia"></div>
-  <div id="New Zealand"></div>
+  <div id="australia"><a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=AUS"><img src="img/map-icons/maps-australia.png" /></a></div>
+  <div id="new-zealand"><a target="_blank" href="https://www.foreverliving.com/retail/entry/Shop.do?distribID=440100680164&store=NZL"><img src="img/map-icons/maps-new-zealand.png" /></a></div>
 </div>
